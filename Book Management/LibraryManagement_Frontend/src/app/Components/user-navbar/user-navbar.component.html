@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="d-flex align-items-center">
+            <img routerLink="/dashboard" src="../assets/images/logo4.png" alt="Error">
+            <a class="navbar-brand" routerLink="/dashboard">Book Library</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item d-flex">
+                    <a class="nav-link active" routerLink="/dashboard">{{username}}</a>
+                    <small>{{token_Availaible}}</small>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link active" routerLink="add-book">Add Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="my-books">My Books</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="d-flex">
+                <a id="logout" class="nav-link active text-white p-2" (click)="logout()">Logout</a>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

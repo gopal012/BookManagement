@@ -1,0 +1,28 @@
+#main{
+    background-image: url("/assets/images/bg3.jpg");
+    height: 89vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    /* opacity: 0.7; */
+    z-index: -1;
+}
+
+#image{
+    width: 12vw;
+    height: 15vw;
+}
+
+button{
+    width: 6.5vw;
+}
+
+#search-div{
+    height: 20vh;
+    background-color: rgb(36, 35, 35);
+}
+
+#search{
+    width: 10vw;
+}

@@ -1,0 +1,78 @@
+<div id="main" class="d-flex align-items-end justify-content-center">
+    <div id="search-div" class="container h-25 w-75 m-3">
+      <h3 class="text-center text-white m-2">Search Book</h3>
+        <div class="d-flex justify-content-evenly align-items-center">
+          <form [formGroup]="filterForm">
+            <input class='m-2 p-3 text-center' formControlName="bookName" type="text" name="bookName" placeholder="Book Name">
+            <input class='m-2 p-3 text-center' formControlName="author" type="text" name="author" placeholder="Author">
+            <input class='m-2 p-3 text-center' formControlName="genre" type="text" name="genre" placeholder="Genre">
+            <button id="search" type="search" class="btn-success m-2 p-3" (click)="onSearch()">Search</button>
+          </form>
+        </div>
+    </div>
+</div>
+<div>
+    <h1 class="text-center">Book List</h1>
+    <!-- If User have filtered Book according to their Requirement -->
+    <ng-container *ngIf="filteredBook.length > 0">
+      <div class="container" *ngFor="let book of filteredBook">
+          <div class="card mb-3 mx-auto" style="max-width: 60vw;">
+              <div class="row">
+                <div class="col-md-4 d-flex justify-content-center my-3">
+                  <img id="image" [src]="book.imageUrl" class="img-fluid rounded-start" alt="Error">
+                </div>
+                <div class="col-md-5">
+                  <div class="card-body">
+                    <h4 class="card-title">{{book.bookName}}</h4>
+                    <h5>By - {{book.author}}</h5>
+                    <p class="mb-2">{{book.genre}}</p>
+                    <div class="d-flex">
+                      <div *ngFor='let in of arr(book.rating)'>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                    <p>"{{book.description}}"</p>
+                  </div>
+                </div>
+                <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
+                  <button class="btn-dark m-2" (click)="borrow(book.id,book.lent_By_UserId)">Borrow</button>
+                </div>
+              </div>
+          </div>
+      </div>
+    </ng-container>
+    <!-- If User haven't filtered Book according to their Requirement So we have to show all Availaible Books -->
+    <ng-container *ngIf="filteredBook.length <= 0 && Books.length>0">
+      <div class="container" *ngFor="let book of Books">
+          <div class="card mb-3 mx-auto" style="max-width: 60vw;">
+              <div class="row">
+                <div class="col-md-4 d-flex justify-content-center my-3">
+                  <img id="image" [src]="book.imageUrl" class="img-fluid rounded-start" alt="Error">
+                </div>
+                <div class="col-md-5">
+                  <div class="card-body">
+                    <h4 class="card-title">{{book.bookName}}</h4>
+                    <h5>By - {{book.author}}</h5>
+                    <p class="mb-2">{{book.genre}}</p>
+                    <div class="d-flex">
+                      <div *ngFor='let in of arr(book.rating)'>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                    <p>"{{book.description}}"</p>
+                  </div>
+                </div>
+                <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
+                  <button class="btn-dark m-2" (click)="borrow(book.id,book.lent_By_UserId)">Borrow</button>
+                </div>
+              </div>
+          </div>
+      </div>
+    </ng-container>
+    <!-- If User haven't filtered Book according to their Requirement and we don't have any Book Availaible -->
+    <ng-container *ngIf="Books.length <= 0 && filteredBook.length <= 0">
+      <div class="container">
+        <h2 class="text-center">No Book Avilaible !!</h2>
+      </div>
+    </ng-container>
+</div>

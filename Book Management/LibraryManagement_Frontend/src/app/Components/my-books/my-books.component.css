@@ -1,0 +1,30 @@
+#image{
+    width: 12vw;
+    height: 15vw;
+}
+
+.card{
+    background-color: rgb(198, 191, 191);
+    border: 3px solid black;
+    border-radius: 3vw;
+    box-shadow: 5px 5px 5px;
+}
+
+button{
+    width: 6.5vw;
+    border: 2px solid black;
+}
+
+h3{
+    background-color: rgb(37, 37, 37);
+    color: rgb(175, 174, 174);
+    padding: 1vw;
+    margin: 1vw 0vw;
+    text-align: center;
+}
+
+.heading{
+    padding: 1vw;
+    margin: 1vw 0vw;
+    text-align: center;
+}

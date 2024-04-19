@@ -1,0 +1,14 @@
+nav{
+    background-color: rgb(41, 40, 40);
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid img{
+    width: 6vw;
+    height: 5vw;
+}
+
+li{
+    font-size: 1.5vw;
+}

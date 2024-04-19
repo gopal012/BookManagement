@@ -1,0 +1,28 @@
+nav{
+    background-color: rgb(41, 40, 40);
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid img{
+    width: 6vw;
+    height: 5vw;
+}
+
+li,#logout{
+    font-size: 1.5vw;
+}
+
+small{
+    height: 17px;
+    font-size: 9px;
+    border: 1px solid white;
+    background-color: red;
+    color: white;
+    padding: 1px 5px ;
+    border-radius: 5px;
+}
+
+a{
+    cursor: pointer;
+}
